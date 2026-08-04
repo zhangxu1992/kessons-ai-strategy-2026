@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科森斯 AI赋能战略报告 2026 | 东莞中小企业AI效率伙伴</title>
+<style>
+
+/* ===== Reset & Base ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+html{transition:background-color 0.4s ease, color 0.4s ease}
+body{
+  font-family:'Segoe UI','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+  line-height:1.75;
+  color:var(--c-text-body);
+  background:var(--c-bg-page);
+  -webkit-font-smoothing:antialiased;
+  transition:background-color 0.4s ease, color 0.4s ease
+}
+
+/* ===== CSS Variables ===== */
+:root{
+  /* raw colors */
+  --navy-900:#0a1628;
+  --navy-800:#0f1f3d;
+  --navy-700:#15294a;
+  --navy-600:#1c3a5e;
+  --navy-500:#254b75;
+  --navy-400:#3a6395;
+  --gold:#c5a55a;
+  --gold-light:#e0cc8a;
+  --gold-dark:#a8862e;
+  --gold-glow:rgba(197,165,90,0.18);
+  --white:#ffffff;
+  --gray-50:#f9fafb;
+  --gray-100:#f3f4f6;
+  --gray-200:#e5e7eb;
+  --gray-300:#d1d5db;
+  --gray-400:#9ca3af;
+  --gray-500:#6b7280;
+  --gray-600:#4b5563;
+  --gray-700:#374151;
+  --gray-800:#1f2937;
+
+  /* accent (unchanged across themes) */
+  --c-accent:#1a73e8;
+  --c-accent-light:#4a9af5;
+  --c-accent-dark:#1557b0;
+
+  --sidebar-w:260px;
+  --header-h:0px;
+  --radius-sm:6px;
+  --radius:10px;
+  --radius-lg:16px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,0.06);
+  --shadow:0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg:0 12px 48px rgba(0,0,0,0.12);
+  --transition:0.25s cubic-bezier(0.4,0,0.2,1)
+}
+
+/* ===== Theme: Dark (default, matches original) ===== */
+[data-theme="dark"]{
+  --c-bg-page:var(--navy-900);
+  --c-bg-surface:var(--navy-800);
+  --c-bg-card:var(--navy-700);
+  --c-bg-card-alt:rgba(255,255,255,0.05);
+  --c-bg-callout-info:rgba(59,130,246,0.1);
+  --c-bg-callout-warn:rgba(245,158,11,0.1);
+  --c-bg-callout-gold:rgba(197,165,90,0.06);
+  --c-bg-callout-info-border:#3b82f6;
+  --c-bg-callout-warn-border:#f59e0b;
+  --c-text-body:rgba(255,255,255,0.85);
+  --c-text-heading:#ffffff;
+  --c-text-secondary:rgba(255,255,255,0.6);
+  --c-text-muted:rgba(255,255,255,0.4);
+  --c-border:#1e2d45;
+  --c-border-light:rgba(255,255,255,0.08);
+  --c-table-header-bg:var(--navy-600);
+  --c-table-row-hover:rgba(255,255,255,0.03);
+  --c-table-border:var(--navy-500);
+  --c-shadow-sm:0 1px 3px rgba(0,0,0,0.3);
+  --c-shadow:0 4px 24px rgba(0,0,0,0.4);
+  --c-hero-bg:linear-gradient(135deg,var(--navy-900) 0%,var(--navy-700) 50%,var(--navy-600) 100%);
+  --c-sidebar-bg:linear-gradient(180deg,var(--navy-900) 0%,var(--navy-700) 100%);
+  --c-sidebar-text:#ffffff;
+  --c-footer-bg:var(--navy-800);
+  --c-footer-text:rgba(255,255,255,0.5);
+  --c-btn-bg:var(--navy-800);
+  --c-btn-text:var(--gold-light);
+  --theme-toggle-icon:"🌙";
+}
+
+/* ===== Theme: Light ===== */
+[data-theme="light"]{
+  --c-bg-page:#ffffff;
+  --c-bg-surface:#f8f9fa;
+  --c-bg-card:#f8f9fa;
+  --c-bg-card-alt:#f1f3f5;
+  --c-bg-callout-info:#eff6ff;
+  --c-bg-callout-warn:#fffbeb;
+  --c-bg-callout-gold:rgba(184,134,11,0.06);
+  --c-bg-callout-info-border:#3b82f6;
+  --c-bg-callout-warn-border:#f59e0b;
+  --c-text-body:#0a1628;
+  --c-text-heading:#0a1628;
+  --c-text-secondary:#4b5563;
+  --c-text-muted:#9ca3af;
+  --c-border:#e5e7eb;
+  --c-border-light:#e5e7eb;
+  --c-table-header-bg:var(--navy-700);
+  --c-table-row-hover:#f9fafb;
+  --c-table-border:#e5e7eb;
+  --c-shadow-sm:0 1px 3px rgba(0,0,0,0.08);
+  --c-shadow:0 4px 24px rgba(0,0,0,0.08);
+  --c-hero-bg:linear-gradient(135deg,var(--navy-700) 0%,var(--navy-600) 50%,var(--navy-500) 100%);
+  --c-sidebar-bg:linear-gradient(180deg,var(--navy-900) 0%,var(--navy-700) 100%);
+  --c-sidebar-text:#ffffff;
+  --c-footer-bg:var(--navy-900);
+  --c-footer-text:rgba(255,255,255,0.6);
+  --c-btn-bg:#f8f9fa;
+  --c-btn-text:var(--navy-800);
+  --theme-toggle-icon:"☀️";
+}
+
+/* ===== Sidebar Navigation ===== */
+.sidebar{
+  position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;
+  background:var(--c-sidebar-bg);
+  color:var(--c-sidebar-text);z-index:100;
+  display:flex;flex-direction:column;
+  overflow-y:auto;overflow-x:hidden;
+  scrollbar-width:thin;scrollbar-color:var(--navy-400) transparent;
+  transition:background 0.4s ease
+}
+.sidebar::-webkit-scrollbar{width:5px}
+.sidebar::-webkit-scrollbar-track{background:transparent}
+.sidebar::-webkit-scrollbar-thumb{background:var(--navy-400);border-radius:3px}
+
+.sidebar-brand{
+  padding:28px 24px 20px;
+  border-bottom:1px solid var(--c-border-light);
+  flex-shrink:0
+}
+.sidebar-brand .logo{
+  display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--c-sidebar-text)
+}
+
+/* ===== Theme Toggle Button ===== */
+.theme-toggle{
+  position:fixed;top:16px;right:20px;z-index:150;
+  width:40px;height:40px;
+  border-radius:50%;
+  border:1px solid var(--c-border-light);
+  background:var(--c-btn-bg);
+  color:var(--c-btn-text);
+  font-size:18px;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--c-shadow-sm);
+  transition:all var(--transition);
+  -webkit-user-select:none;user-select:none
+}
+.theme-toggle:hover{
+  transform:scale(1.1);
+  box-shadow:var(--c-shadow)
+}
+@media (max-width:900px){
+  .theme-toggle{right:14px;top:14px}
+}
+.sidebar-brand .logo-icon{
+  width:42px;height:42px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  border-radius:var(--radius-sm);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:20px;color:var(--navy-900)
+}
+.sidebar-brand .logo-text{font-size:15px;font-weight:600;line-height:1.3}
+.sidebar-brand .logo-sub{
+  font-size:11px;color:var(--gold-light);font-weight:400;letter-spacing:0.5px
+}
+
+.sidebar-nav{flex:1;padding:12px 0}
+.sidebar-nav a{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 24px;
+  color:rgba(255,255,255,0.7);
+  text-decoration:none;font-size:13.5px;
+  transition:all var(--transition);
+  border-left:3px solid transparent;
+  position:relative
+}
+.sidebar-nav a:hover{
+  color:var(--c-sidebar-text);
+  background:rgba(255,255,255,0.05);
+  border-left-color:var(--gold)
+}
+.sidebar-nav a.active{
+  color:var(--gold-light);
+  background:rgba(197,165,90,0.08);
+  border-left-color:var(--gold);
+  font-weight:600
+}
+.sidebar-nav .nav-num{
+  width:22px;height:22px;border-radius:50%;
+  background:rgba(255,255,255,0.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;flex-shrink:0;
+  transition:all var(--transition)
+}
+.sidebar-nav a:hover .nav-num,
+.sidebar-nav a.active .nav-num{
+  background:var(--gold);color:var(--navy-900)
+}
+
+.sidebar-footer{
+  padding:16px 24px 24px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  font-size:11px;color:rgba(255,255,255,0.35);
+  flex-shrink:0
+}
+
+/* ===== Main Content ===== */
+.main{margin-left:var(--sidebar-w);min-height:100vh}
+
+/* Hero */
+.hero{
+  background:var(--c-hero-bg);
+  color:var(--c-sidebar-text);padding:48px 0 36px;
+  position:relative;overflow:hidden;
+  transition:background 0.4s ease
+}
+.hero::before{
+  content:'';position:absolute;top:-120px;right:-80px;
+  width:360px;height:360px;
+  border-radius:50%;
+  border:1px solid rgba(197,165,90,0.15);
+  pointer-events:none
+}
+.hero::after{
+  content:'';position:absolute;bottom:-60px;left:10%;
+  width:200px;height:200px;
+  border-radius:50%;
+  border:1px solid rgba(197,165,90,0.08);
+  pointer-events:none
+}
+.hero-inner{max-width:1100px;margin:0 auto;padding:0 36px;position:relative;z-index:1}
+.hero-badge{
+  display:inline-block;padding:6px 16px;
+  background:rgba(197,165,90,0.12);
+  border:1px solid rgba(197,165,90,0.25);
+  border-radius:20px;color:var(--gold-light);
+  font-size:12px;font-weight:500;letter-spacing:1px;
+  margin-bottom:20px
+}
+.hero h1{
+  font-size:clamp(28px,4vw,42px);font-weight:700;line-height:1.25;
+  letter-spacing:-0.5px;margin-bottom:8px
+}
+.hero h1 .gold{color:var(--gold-light)}
+.hero .subtitle{
+  font-size:16px;color:rgba(255,255,255,0.7);max-width:600px;
+  margin-bottom:28px;line-height:1.6
+}
+
+/* Hero Stats Cards */
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:0}
+.stat-card{
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:var(--radius);padding:18px 20px;
+  text-align:center;transition:all var(--transition)
+}
+.stat-card:hover{
+  background:rgba(255,255,255,0.1);
+  border-color:rgba(197,165,90,0.3);
+  transform:translateY(-2px)
+}
+.stat-card .stat-value{
+  font-size:28px;font-weight:700;color:var(--gold-light);
+  line-height:1.2;margin-bottom:4px
+}
+.stat-card .stat-unit{font-size:14px;font-weight:400;color:var(--gold)}
+.stat-card .stat-label{
+  font-size:12px;color:rgba(255,255,255,0.55);
+  letter-spacing:0.3px
+}
+
+/* Section Container */
+.container{max-width:1100px;margin:0 auto;padding:0 36px}
+.section{padding:40px 0 24px}
+
+.section-header{
+  margin-bottom:28px;padding-bottom:14px;
+  border-bottom:2px solid var(--c-border);
+  position:relative
+}
+.section-header::after{
+  content:'';position:absolute;bottom:-2px;left:0;
+  width:60px;height:2px;background:var(--gold)
+}
+.section-header .sec-num{
+  font-size:12px;font-weight:700;color:var(--gold-dark);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px
+}
+.section-header h2{
+  font-size:clamp(22px,3vw,28px);font-weight:700;
+  color:var(--c-text-heading);line-height:1.3
+}
+
+.section-subtitle{
+  color:var(--c-text-secondary);font-size:14px;margin-bottom:24px;
+  line-height:1.6
+}
+
+/* Cards */
+.card{
+  background:var(--c-bg-card);border-radius:var(--radius);
+  box-shadow:var(--c-shadow-sm);padding:28px 28px;
+  margin-bottom:24px;border:1px solid var(--c-border);
+  transition:all var(--transition)
+}
+.card:hover{box-shadow:var(--c-shadow)}
+.card h3{
+  font-size:18px;font-weight:700;color:var(--c-text-heading);
+  margin-bottom:12px;display:flex;align-items:center;gap:10px
+}
+.card h3 .dot{
+  width:8px;height:8px;border-radius:50%;background:var(--gold);
+  flex-shrink:0
+}
+.card h4{
+  font-size:15px;font-weight:600;color:var(--c-text-heading);
+  margin:20px 0 8px
+}
+.card h4:first-of-type{margin-top:0}
+.card p,.card li{font-size:14px;color:var(--c-text-secondary);line-height:1.75}
+.card ul,.card ol{padding-left:20px;margin:8px 0}
+.card li{margin-bottom:4px}
+
+/* Tables */
+.table-wrap{overflow-x:auto;margin:8px 0;border-radius:var(--radius-sm)}
+table{
+  width:100%;border-collapse:collapse;font-size:13.5px;
+  background:var(--c-bg-card)
+}
+thead{background:var(--c-table-header-bg)}
+thead th{
+  color:var(--gold-light);font-weight:600;text-align:left;
+  padding:12px 14px;font-size:12.5px;letter-spacing:0.3px;
+  white-space:nowrap
+}
+thead th:first-child{border-radius:var(--radius-sm) 0 0 0}
+thead th:last-child{border-radius:0 var(--radius-sm) 0 0}
+tbody td{
+  padding:11px 14px;border-bottom:1px solid var(--c-table-border);
+  color:var(--c-text-body);vertical-align:top
+}
+tbody tr:hover{background:var(--c-table-row-hover)}
+tbody tr:last-child td{border-bottom:none}
+td strong{color:var(--c-text-heading)}
+
+/* Badges */
+.badge{
+  display:inline-block;padding:2px 10px;border-radius:12px;
+  font-size:11px;font-weight:600;letter-spacing:0.3px
+}
+.badge-gold{background:var(--gold-glow);color:var(--gold-dark)}
+.badge-nav{background:var(--navy-400);color:var(--white)}
+.badge-green{background:#d1fae5;color:#065f46}
+.badge-red{background:#fee2e2;color:#991b1b}
+.badge-amber{background:#fef3c7;color:#92400e}
+.badge-blue{background:#dbeafe;color:#1e40af}
+.badge-neutral{background:var(--c-bg-card-alt);color:var(--c-text-secondary)}
+
+/* Highlight Callout */
+.callout{
+  padding:16px 20px;border-radius:var(--radius-sm);
+  font-size:13.5px;line-height:1.7;margin:16px 0
+}
+.callout-info{background:var(--c-bg-callout-info);border-left:4px solid var(--c-bg-callout-info-border);color:var(--c-text-body)}
+.callout-warn{background:var(--c-bg-callout-warn);border-left:4px solid var(--c-bg-callout-warn-border);color:var(--c-text-body)}
+.callout-gold{background:var(--c-bg-callout-gold);border-left:4px solid var(--gold);color:var(--c-text-body)}
+.callout strong{color:var(--c-text-heading)}
+
+/* Timeline / Roadmap */
+.timeline{margin:24px 0;position:relative}
+.timeline::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(180deg,#3b82f6,#10b981 33%,#f59e0b 66%,#8b5cf6);
+  border-radius:2px
+}
+.timeline-phase{margin-bottom:32px;position:relative;padding-left:32px}
+.timeline-phase::before{
+  content:'';position:absolute;left:-6px;top:6px;
+  width:16px;height:16px;border-radius:50%;
+  border:3px solid var(--white);box-shadow:0 0 0 3px currentColor
+}
+.timeline-phase.p1::before{color:#3b82f6;background:#3b82f6}
+.timeline-phase.p2::before{color:#10b981;background:#10b981}
+.timeline-phase.p3::before{color:#f59e0b;background:#f59e0b}
+.timeline-phase.p4::before{color:#8b5cf6;background:#8b5cf6}
+.timeline-phase .phase-title{
+  font-size:16px;font-weight:700;margin-bottom:4px
+}
+.timeline-phase.p1 .phase-title{color:#2563eb}
+.timeline-phase.p2 .phase-title{color:#059669}
+.timeline-phase.p3 .phase-title{color:#d97706}
+.timeline-phase.p4 .phase-title{color:#7c3aed}
+.timeline-phase .phase-range{font-size:12px;color:var(--c-text-muted);margin-bottom:12px}
+.timeline-items{display:flex;flex-wrap:wrap;gap:10px}
+.timeline-item{
+  background:var(--c-bg-card);border:1px solid var(--c-border);
+  border-radius:var(--radius-sm);padding:14px 16px;
+  flex:1 1 260px;min-width:240px;
+  transition:all var(--transition)
+}
+.timeline-item:hover{
+  border-color:var(--gold);
+  box-shadow:var(--c-shadow-sm)
+}
+.timeline-item .tm{
+  font-size:11px;font-weight:700;color:var(--gold-dark);
+  letter-spacing:0.5px;margin-bottom:4px
+}
+.timeline-item .tm-title{
+  font-size:13.5px;font-weight:600;color:var(--c-text-heading);
+  margin-bottom:6px
+}
+.timeline-item .tm-detail{
+  font-size:12px;color:var(--c-text-secondary);line-height:1.6
+}
+
+/* Next Actions */
+.action-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px;margin:16px 0}
+.action-card{
+  background:var(--c-bg-card);border:1px solid var(--c-border);
+  border-radius:var(--radius);padding:20px 22px;
+  display:flex;gap:14px;align-items:flex-start;
+  transition:all var(--transition)
+}
+.action-card:hover{box-shadow:var(--c-shadow);border-color:var(--gold)}
+.action-card .prio{
+  width:32px;height:32px;border-radius:var(--radius-sm);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;flex-shrink:0
+}
+.action-card .prio.p0{background:#fee2e2;color:#991b1b}
+.action-card .prio.p1{background:#fef3c7;color:#92400e}
+.action-card .prio.p2{background:#dbeafe;color:#1e40af}
+.action-card .act-body{flex:1}
+.action-card .act-title{font-size:14px;font-weight:600;color:var(--c-text-heading);margin-bottom:4px}
+.action-card .act-meta{font-size:12px;color:var(--c-text-muted);margin-bottom:6px}
+.action-card .act-desc{font-size:12.5px;color:var(--c-text-secondary);line-height:1.6}
+
+/* Footer */
+.footer{
+  background:var(--c-footer-bg);color:var(--c-footer-text);
+  padding:32px 0;margin-left:var(--sidebar-w);text-align:center;
+  font-size:12px;line-height:1.8;
+  transition:background 0.4s ease
+}
+.footer a{color:var(--gold-light);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+/* BSC Map */
+.bm{
+  white-space:pre;font-family:'Courier New',monospace;
+  font-size:12px;line-height:1.35;
+  color:var(--c-text-secondary);
+  background:var(--c-bg-card-alt);
+  border-radius:var(--radius-sm);
+  padding:16px;overflow-x:auto;
+  margin:8px 0
+}
+
+/* Vision Quote */
+.vision-quote{
+  background:linear-gradient(135deg,var(--navy-800),var(--navy-700));
+  color:var(--white);border-radius:var(--radius-lg);
+  padding:32px 36px;margin:24px 0;position:relative
+}
+.vision-quote blockquote{
+  font-size:17px;font-style:italic;line-height:1.6;
+  border-left:3px solid var(--gold);padding-left:20px;
+  color:rgba(255,255,255,0.9)
+}
+.vision-quote .attribution{
+  font-size:13px;color:var(--gold-light);margin-top:12px
+}
+
+/* OKR list style */
+.okr-item{margin-bottom:14px;padding:12px 16px;background:var(--c-bg-card-alt);border-radius:var(--radius-sm);font-size:13px}
+.okr-item .kr-label{font-weight:600;color:var(--c-text-heading)}
+.okr-item .kr-detail{color:var(--c-text-secondary);font-size:12px;margin-top:4px}
+
+/* Values grid */
+.values-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:14px;margin:16px 0
+}
+.value-card{
+  background:var(--c-bg-card);border:1px solid var(--c-border);
+  border-radius:var(--radius);padding:20px;text-align:center;
+  transition:all var(--transition)
+}
+.value-card:hover{border-color:var(--gold);box-shadow:var(--c-shadow-sm)}
+.value-card .val-num{
+  width:36px;height:36px;margin:0 auto 10px;
+  background:var(--navy-700);color:var(--gold-light);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:15px
+}
+.value-card .val-title{font-size:15px;font-weight:700;color:var(--c-text-heading);margin-bottom:6px}
+.value-card .val-desc{font-size:12.5px;color:var(--c-text-secondary);line-height:1.6}
+
+/* Risk progress bars */
+.risk-bar-bg{background:var(--c-border);border-radius:4px;height:6px;margin:4px 0 8px;overflow:hidden}
+.risk-bar-fg{height:100%;border-radius:4px;transition:width 0.6s ease}
+.risk-bar-fg.high{background:linear-gradient(90deg,#ef4444,#f87171)}
+.risk-bar-fg.med{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.risk-bar-fg.low{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+
+/* SWOT grid */
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.swot-box{
+  padding:18px 20px;border-radius:var(--radius);
+  border-left:4px solid;background:var(--c-bg-card)
+}
+.swot-box.s{border-color:#22c55e}
+.swot-box.w{border-color:#f59e0b}
+.swot-box.o{border-color:#3b82f6}
+.swot-box.t{border-color:#ef4444}
+.swot-box h4{font-size:15px;font-weight:700;margin-bottom:10px}
+.swot-box.s h4{color:#16a34a}
+.swot-box.w h4{color:#d97706}
+.swot-box.o h4{color:#2563eb}
+.swot-box.t h4{color:#dc2626}
+.swot-box ul{font-size:13px;color:var(--c-text-secondary);padding-left:18px}
+.swot-box li{margin-bottom:6px;line-height:1.6}
+
+/* Mobile toggle */
+.menu-toggle{
+  display:none;position:fixed;top:14px;left:14px;z-index:200;
+  width:40px;height:40px;background:var(--navy-800);
+  border:none;border-radius:var(--radius-sm);color:var(--white);
+  font-size:20px;cursor:pointer;align-items:center;justify-content:center;
+  box-shadow:var(--c-shadow)
+}
+.menu-toggle.active{display:flex}
+
+/* Back to top */
+.back-to-top{
+  position:fixed;bottom:28px;right:28px;z-index:90;
+  width:40px;height:40px;border-radius:50%;
+  background:var(--navy-800);color:var(--gold-light);
+  border:none;cursor:pointer;font-size:18px;
+  box-shadow:var(--c-shadow);display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:translateY(12px);transition:all var(--transition);
+  pointer-events:none
+}
+.back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.back-to-top:hover{background:var(--navy-600)}
+
+/* Responsive */
+@media (max-width:900px){
+  .sidebar{transform:translateX(-100%);transition:transform var(--transition)}
+  .sidebar.open{transform:translateX(0)}
+  .main{margin-left:0}
+  .footer{margin-left:0}
+  .menu-toggle{display:flex}
+  .hero-inner,.container{padding:0 20px}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .swot-grid{grid-template-columns:1fr}
+  .hero{padding:36px 0 28px}
+  .timeline::before{left:0}
+  .timeline-phase{padding-left:24px}
+  .timeline-phase::before{left:-6px}
+  .values-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:480px){
+  .hero-stats{grid-template-columns:1fr 1fr;gap:10px}
+  .stat-card{padding:14px}
+  .stat-card .stat-value{font-size:22px}
+  .action-grid{grid-template-columns:1fr}
+  .section{padding:28px 0 16px}
+}
+
+/* Print */
+@media print{
+  .sidebar,.menu-toggle,.back-to-top{display:none!important}
+  .main,.footer{margin-left:0}
+  .hero{background:#0a1628!important;-webkit-print-color-adjust:exact}
+}
+
+</style>
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="切换主题" title="切换深色/浅色主题">🌙</button>
+<button class="menu-toggle mt" onclick="toggleSidebar()" aria-label="Menu">&#9776;</button>
+<aside class="sidebar" id="sidebar">
+  <div class="sb"><a href="#hero" class="logo"><span class="li">K</span><span><div class="lt">科森斯</div><div class="ls">AI STRATEGY 2026</div></span></a></div>
+  <nav class="sn" id="sidebarNav">
+    <a href="#sec0"><span class="nn">0</span>执行摘要</a>
+    <a href="#sec1"><span class="nn">1</span>愿景与使命</a>
+    <a href="#sec2"><span class="nn">2</span>SWOT 分析</a>
+    <a href="#sec3"><span class="nn">3</span>公司级 OKR</a>
+    <a href="#sec4"><span class="nn">4</span>职能域 OKR</a>
+    <a href="#sec5"><span class="nn">5</span>BSC 平衡计分卡</a>
+    <a href="#sec6"><span class="nn">6</span>战略路线图</a>
+    <a href="#sec7"><span class="nn">7</span>风险评估</a>
+    <a href="#sec8"><span class="nn">8</span>交叉验证</a>
+    <a href="#sec9"><span class="nn">9</span>竞品速览</a>
+    <a href="#sec10"><span class="nn">10</span>下一步行动</a>
+  </nav>
+  <div class="sf">战略周期 2026.8 - 2027.7<br>报告日期 2026-08-03</div>
+</aside>
+<main class="main">
+<section class="hero" id="hero">
+  <div class="hi">
+    <div class="hb">STRATEGIC REPORT &middot; 12-MONTH ROADMAP</div>
+    <h1>东莞市科森斯信息科技<br><span class="gold">AI赋能战略报告 2026</span></h1>
+    <p class="sub">从「软件定制公司」到「东莞中小企业最信赖的AI效率伙伴」——一份为CEO定制的12个月转型路线图</p>
+    <div class="hs">
+      <div class="sc"><div class="sv">100<span class="su">万</span></div><div class="sl">目标 ARR</div></div>
+      <div class="sc"><div class="sv">20<span class="su">+</span></div><div class="sl">签约客户</div></div>
+      <div class="sc"><div class="sv">3<span class="su">名</span></div><div class="sl">签约专家</div></div>
+      <div class="sc"><div class="sv">12<span class="su">个月</span></div><div class="sl">战略路线图</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEC 0: 执行摘要 -->
+<section class="sec" id="sec0"><div class="con">
+<div class="sh"><div class="sn2">Section 0</div><h2>执行摘要</h2></div>
+<div class="card">
+<h3><span class="dot"></span>情境概览</h3>
+<p>科森斯是一家位于东莞的1人软件定制公司，年营收低于100万，拥有<strong>50+存量客户</strong>（覆盖财税、律所、印刷、汽修、工厂），客户关系直达老板/CEO层级。当前正从软件定制研发向<strong>企业AI赋能培训 + Agent搭建落地</strong>战略转型。</p>
+<p style="margin-top:12px">2026年东莞市政府印发《人工智能+城市实施方案》，明确提出到2028年推动规上企业AI普及率超70%、产业规模突破1000亿，AI人才缺口超3万，供需比仅<strong>1:9</strong>——这为科森斯提供了历史性窗口。</p>
+</div>
+<div class="card">
+<h3><span class="dot"></span>四大关键发现</h3>
+<div class="oi"><span class="kl">发现 1：市场爆发 + 差异化切入</span><div class="kd">2026年国内企业AI培训市场突破320亿，同比激增67%。70%中小企业面临落地困境。科森斯「培训+Agent落地」定位精准切入蓝海缝隙。</div></div>
+<div class="oi"><span class="kl">发现 2：避开正面竞争</span><div class="kd">东莞竞品均侧重AI营销获客，未有基于EasyClaw的员工效率型Agent搭建服务商。科森斯聚焦<strong>内部运营提效</strong>赛道。</div></div>
+<div class="oi"><span class="kl">发现 3：存量客户是核心资产</span><div class="kd">50+存量客户按行业20-30%转化率可转化10-15个。前6个月核心策略是<strong>存量激活</strong>而非陌生获客。</div></div>
+<div class="oi"><span class="kl">发现 4：产能约束需要生态破局</span><div class="kd">1人公司产能上限约15-20个客户。需要标准化产品+专家合作+优先高客单价客户。</div></div>
+</div>
+<div class="card">
+<h3><span class="dot"></span>核心建议优先级</h3>
+<div class="tw"><table>
+<thead><tr><th>优先级</th><th>建议</th><th>负责人</th><th>时间线</th><th>预期结果</th></tr></thead>
+<tbody>
+<tr><td><span class="badge br">关键</span></td><td>M1-M3完成存量客户筛选和3个种子客户试点交付，形成标准化SOP</td><td>创始人(销售)</td><td>2026.10</td><td>验证客单价3-8万，NPS>=8</td></tr>
+<tr><td><span class="badge ba">高</span></td><td>M2-M5签约3-5名行业专家/讲师（分成模式）</td><td>创始人(生态)</td><td>2026.12</td><td>不少于3位签约专家</td></tr>
+<tr><td><span class="badge ba">高</span></td><td>M3-M9开发标准化工具包，单客户交付工时80h-40h</td><td>创始人(产品)</td><td>2027.03</td><td>交付周期缩短50%</td></tr>
+<tr><td><span class="badge bb">中</span></td><td>M10-M12评估首次续约率，>=70%则考虑招募交付专员</td><td>创始人</td><td>2027.07</td><td>续约>=12个，ARR>=80万</td></tr>
+</tbody></table></div>
+</div>
+</div></section>
+
+<!-- SEC 1: 愿景与使命 -->
+<section class="sec" id="sec1"><div class="con">
+<div class="sh"><div class="sn2">Section 1</div><h2>愿景与使命</h2></div>
+<p class="sst">从「软件定制公司」到「AI效率伙伴」的品牌重塑</p>
+<div class="vq"><blockquote>成为东莞及大湾区中小企业最信赖的AI效率伙伴——让每个企业都能拥有自己的AI员工。</blockquote><div class="at">— 科森斯 愿景 2026</div></div>
+<div class="vg">
+<div class="vc"><div class="vn">1</div><div class="vt">落地为先</div><div class="vd">不讲AI多厉害，只交付本周就能用的Agent</div></div>
+<div class="vc"><div class="vn">2</div><div class="vt">信任驱动</div><div class="vd">做客户的AI合伙人，持续价值交付是唯一护城河</div></div>
+<div class="vc"><div class="vn">3</div><div class="vt">极致聚焦</div><div class="vd">1人公司不搞大而全，专注5个行业，深度绑定EasyClaw</div></div>
+<div class="vc"><div class="vn">4</div><div class="vt">开放共生</div><div class="vd">不与专家争利，不与客户争功；科森斯是连接器</div></div>
+</div>
+<div class="card"><h3><span class="dot"></span>使命</h3><p>通过培训赋能 + Agent落地 + 持续服务三位一体模式，帮助中小企业将AI从PPT里的概念转化为工位上的生产力，实现人均效率翻倍。</p></div>
+</div></section>
+
+<!-- SEC 2: SWOT 分析 -->
+<section class="sec" id="sec2"><div class="con">
+<div class="sh"><div class="sn2">Section 2</div><h2>SWOT 分析与 TOWS 战略</h2></div>
+<div class="sg">
+<div class="sb2 s2"><h4>S 优势</h4><ul><li>50+存量客户，直达老板/CEO决策层</li><li>创始人兼具销售+技术，可独立完成全链条</li><li>深耕财税/律所/印刷/汽修/工厂五大垂直行业</li><li>EasyClaw交付载体，客户可自主维护Agent</li><li>极低固定成本，可承受长销售周期</li></ul></div>
+<div class="sb2 w2"><h4>W 劣势</h4><ul><li>产能极度受限：1人无法同时销售+交付+开发+运维</li><li>品牌认知为软件定制，AI赋能定位未建立</li><li>缺乏标准化培训课件和Agent模板库</li><li>无专家/讲师合作资源</li><li>EasyClaw公域知名度有限，需额外教育成本</li></ul></div>
+<div class="sb2 o2"><h4>O 机会</h4><ul><li>东莞人工智能+方案：300个标杆场景、800家AI企业</li><li>东莞AI人才缺口超3万，供需比1:9</li><li>全国企业AI培训市场320亿（2026年）</li><li>东莞22万工业企业，90%为中小企业</li><li>政府百场AI赋能劳动者培训，市场教育已完成</li></ul></div>
+<div class="sb2 t2"><h4>T 威胁</h4><ul><li>金管道AI、三鼎科技等本地竞品有品牌势能</li><li>阿里/字节推出低价/免费企业Agent产品</li><li>客户可能认为直接用EasyClaw即可</li><li>AI技术迭代快，工具链可能半年后过时</li><li>年度服务模式下客户续约意愿不确定</li></ul></div>
+</div>
+<div class="card"><h3><span class="dot"></span>TOWS 战略矩阵</h3>
+<div class="tw"><table>
+<thead><tr><th>编号</th><th>类型</th><th>战略描述</th><th>优先级</th><th>职能域</th></tr></thead>
+<tbody>
+<tr><td>T1</td><td>SO</td><td><strong>存量掘金</strong>：利用50+存量客户关系，精选种子试点，打造标杆后圈层裂变</td><td><span class="badge br">高</span></td><td>销售域</td></tr>
+<tr><td>T2</td><td>WO</td><td><strong>借鸡生蛋</strong>：借助政府百场培训做免费公益课引流，与商协会合作获取背书</td><td><span class="badge br">高</span></td><td>生态域、销售域</td></tr>
+<tr><td>T3</td><td>ST</td><td><strong>EasyClaw生态护城河</strong>：深度绑定EasyClaw，建设行业Agent模板库提升切换成本</td><td><span class="badge br">高</span></td><td>产品域</td></tr>
+<tr><td>T4</td><td>WO</td><td><strong>专家合伙人</strong>：签约3-5名行业AI专家，分成合作，专家出内容，科森斯出客户+落地</td><td><span class="badge br">高</span></td><td>生态域</td></tr>
+<tr><td>T5</td><td>WT</td><td><strong>标准化快艇</strong>：集中开发工具包，将单客户交付周期压缩至2周</td><td><span class="badge ba">中</span></td><td>产品域</td></tr>
+<tr><td>T6</td><td>SO</td><td><strong>行业纵深</strong>：聚焦财税行业做深做透，建立壁垒后横向复制</td><td><span class="badge ba">中</span></td><td>交付域</td></tr>
+</tbody></table></div>
+</div>
+</div></section>
+
+<!-- SEC 3: 公司级 OKR -->
+<section class="sec" id="sec3"><div class="con">
+<div class="sh"><div class="sn2">Section 3</div><h2>公司级 OKR</h2></div>
+<p class="sst">每个 KR 附带推算逻辑和数据来源 | 可信度：推算值 / 假设值</p>
+<div class="card"><h3><span class="dot"></span>O1：完成商业模式验证，实现ARR突破100万</h3>
+<div class="oi"><span class="kl">KR1.1</span> 签约年度服务客户从0到20个，截至2027年7月<div class="kd">推算：存量50+ x 20%转化率=10个 + 新拓10个 = 20个。东莞22万工业企业 x 0.01%渗透率约22个潜在。</div></div>
+<div class="oi"><span class="kl">KR1.2</span> 年度经常性收入(ARR)突破100万，截至2027年7月<div class="kd">推算：客单价3-8万/年，取中位数5万。20客户 x 5万=100万。行业参考：中小企业AI培训基础套餐5-15万/年。</div></div>
+<div class="oi"><span class="kl">KR1.3</span> 首批种子客户(3个)NPS评分>=8分(10分制)，截至2026年10月<div class="kd">基于SaaS行业优秀线。需首次交付后验证。</div></div>
+</div>
+<div class="card"><h3><span class="dot"></span>O2：构建可复制的标准化交付体系</h3>
+<div class="oi"><span class="kl">KR2.1</span> 完成科森斯AI赋能工具包V1.0（5行业x3Agent模板+课件+SOP），截至2027年1月<div class="kd">15模板x8h/个=120h，课件40h+SOP20h，总计约180h（约3个月）。</div></div>
+<div class="oi"><span class="kl">KR2.2</span> 单客户交付周期从80h压缩至40h，截至2027年1月<div class="kd">首次交付80h（需求8+准备8+培训16+Agent40+文档8）。标准化后目标35-40h。</div></div>
+<div class="oi"><span class="kl">KR2.3</span> Agent模板命中率达80%，截至2027年4月<div class="kd">15个模板覆盖5行业x3场景约80%覆盖率。需10个客户后统计命中率。</div></div>
+</div>
+<div class="card"><h3><span class="dot"></span>O3：建立AI专家合作生态，签约>=3名行业专家/讲师</h3>
+<div class="oi"><span class="kl">KR3.1</span> 签约3名行业专家/讲师（分成合作模式），截至2026年12月<div class="kd">广东省AI讲师市场行情：单场培训2000-5000元/天。分级合作：基础分成（年费30%归专家，上限3万/客户）。</div></div>
+<div class="oi"><span class="kl">KR3.2</span> 生态伙伴贡献内容覆盖>=60%培训课程，截至2027年3月<div class="kd">全年20客户x3次=60场次。3专家各覆盖2-3个方向，专家贡献36场次(60%)。</div></div>
+</div>
+</div></section>
+
+<!-- SEC 4: 职能域 OKR -->
+<section class="sec" id="sec4"><div class="con">
+<div class="sh"><div class="sn2">Section 4</div><h2>职能域 OKR 分解</h2></div>
+<p class="sst">1人公司采用职能域分解代替部门级，每个职能域由创始人兼任</p>
+<div class="card"><h3><span class="dot"></span>时间分配汇总</h3>
+<div class="tw"><table>
+<thead><tr><th>职能域</th><th>占比</th><th>月工时</th><th>M1-M3重心</th><th>M4-M6重心</th><th>M7-M9重心</th><th>M10-M12重心</th></tr></thead>
+<tbody>
+<tr><td><strong>销售域</strong></td><td>40%</td><td>64h</td><td>存量触达+种子签约</td><td>新客拓展+老客推荐</td><td>规模化获客</td><td>续约攻坚</td></tr>
+<tr><td><strong>交付域</strong></td><td>35%</td><td>56h</td><td>种子全流程交付</td><td>标准交付+案例积累</td><td>批量交付+专家协同</td><td>续约客户深耕</td></tr>
+<tr><td><strong>生态域</strong></td><td>15%</td><td>24h</td><td>专家池建立</td><td>专家签约+首场活动</td><td>商协会合作</td><td>生态扩大</td></tr>
+<tr><td><strong>产品域</strong></td><td>10%</td><td>16h</td><td>模板提取</td><td>工具包V0.5</td><td>工具包V1.0</td><td>模板库迭代</td></tr>
+</tbody></table></div>
+</div>
+<div class="card"><h3><span class="dot"></span>销售域（40%）</h3>
+<div class="oi"><span class="kl">DKR-A1.1</span> 存量客户触达率100%（50家全部覆盖），截至2026年10月</div>
+<div class="oi"><span class="kl">DKR-A1.2</span> 签约客户20个（存量转化>=10个，新拓>=10个），截至2027年7月</div>
+<div class="oi"><span class="kl">DKR-A1.3</span> 销售漏斗转化率>=20%，截至2027年7月</div>
+</div>
+<div class="card"><h3><span class="dot"></span>交付域（35%）</h3>
+<div class="oi"><span class="kl">DKR-B1.1</span> 完成3个种子客户全流程交付（培训+Agent+30天跟踪），截至2026年10月</div>
+<div class="oi"><span class="kl">DKR-B1.2</span> 种子客户Agent上线后日均使用>=10次，效率提升可量化（工时节省>=20%），截至2026年11月</div>
+<div class="oi"><span class="kl">DKR-B1.3</span> 首批10个客户的首次续约意向>=70%，截至2027年4月</div>
+</div>
+</div></section>
+
+<!-- SEC 5: BSC 平衡计分卡 -->
+<section class="sec" id="sec5"><div class="con">
+<div class="sh"><div class="sn2">Section 5</div><h2>BSC 平衡计分卡</h2></div>
+<div class="card"><h3><span class="dot"></span>战略地图</h3>
+<div class="bm">愿景：东莞中小企业最信赖的AI效率伙伴
+                    |
+    +---------------+---------------+
+    v               v               v
++--------+    +----------+    +----------+
+|财务维度 |&lt;---| 客户维度  |&lt;---|内部流程  |
++--------+    +----------+    +----------+
+* ARR&gt;=100万  * NPS&gt;=8分     * 交付周期
+* 客单价&gt;=5万 * 客户数20     80h-&gt;40h
+* 毛利率&gt;=65% * 续约率&gt;=70%  * 模板复用80%
+              * 客户均3Agent * 月产能1-&gt;3
+    ^               ^               ^
+    +---------------|---------------+
+                    |
+            +-------+-------+
+            |  学习与成长    |
+            +---------------+
+            * 签约3名AI专家
+            * 15个Agent模板
+            * 标准化课件V1.0
+            * 8个行业案例
+
+因果关系链：签约3名专家 + 标准化工具包
+-&gt; 交付工时减半、产能翻倍 -&gt; 客户数20且NPS&gt;=8
+-&gt; 续约&gt;=70% -&gt; ARR突破100万</div>
+</div>
+<div class="card"><h3><span class="dot"></span>KPI 框架</h3>
+<div class="tw"><table>
+<thead><tr><th>维度</th><th>KPI</th><th>当前值</th><th>H1目标</th><th>H2目标</th><th>频率</th></tr></thead>
+<tbody>
+<tr><td><strong>财务</strong></td><td>ARR</td><td>0</td><td>40万</td><td>100万</td><td>月度</td></tr>
+<tr><td><strong>财务</strong></td><td>平均客单价</td><td>无</td><td>4.5万</td><td>5.5万</td><td>月度</td></tr>
+<tr><td><strong>财务</strong></td><td>CAC</td><td>无</td><td>&lt;0.5万</td><td>&lt;0.3万</td><td>季度</td></tr>
+<tr><td><strong>客户</strong></td><td>签约客户数</td><td>0</td><td>8</td><td>20</td><td>月度</td></tr>
+<tr><td><strong>客户</strong></td><td>NPS评分</td><td>无</td><td>8+</td><td>8+</td><td>季度</td></tr>
+<tr><td><strong>客户</strong></td><td>续约率</td><td>无</td><td>N/A</td><td>70%+</td><td>半年度</td></tr>
+<tr><td><strong>内部流程</strong></td><td>交付工时/客户</td><td>80h</td><td>60h</td><td>40h</td><td>每客户</td></tr>
+<tr><td><strong>内部流程</strong></td><td>模板复用率</td><td>0%</td><td>50%</td><td>80%</td><td>季度</td></tr>
+<tr><td><strong>学习成长</strong></td><td>签约专家数</td><td>0</td><td>2</td><td>3</td><td>季度</td></tr>
+<tr><td><strong>学习成长</strong></td><td>模板库数量</td><td>0</td><td>8</td><td>15</td><td>月度</td></tr>
+<tr><td><strong>学习成长</strong></td><td>案例库数量</td><td>0</td><td>3</td><td>8</td><td>月度</td></tr>
+</tbody></table></div>
+</div>
+</div></section>
+
+
+<!-- SEC 6: 战略路线图 -->
+<section class="sec" id="sec6"><div class="con">
+<div class="sh"><div class="sn2">Section 6</div><h2>战略路线图</h2></div>
+<p class="sst">2026年8月 - 2027年7月，分四个阶段</p>
+<div class="tl">
+
+<div class="tp p1">
+<div class="pt">激活期</div><div class="pr">M1-M3（2026年8月 - 10月） | 存量激活、种子签约、流程跑通</div>
+<div class="ti">
+<div class="tim"><div class="tm">M1</div><div class="tt">战略启动与客户筛选</div><div class="td">制定AI效率诊断报告模板；筛选TOP20名单；联系前10家免费AI诊断约见老板；建立微信社群。</div></div>
+<div class="tim"><div class="tm">M2</div><div class="tt">种子签约与专家池</div><div class="td">首批1-2个种子客户签约（客单价3-5万）；启动专家池建设（20人）；首个Agent搭建启动。</div></div>
+<div class="tim"><div class="tm">M3</div><div class="tt">种子交付与模型验证</div><div class="td">3个种子客户Agent上线+培训+30天跟踪；输出首版SOP V0.5；建立第一个Agent模板（财税）。</div></div>
+</div></div>
+
+<div class="tp p2">
+<div class="pt">验证期</div><div class="pr">M4-M6（2026年11月 - 2027年1月） | 工具包V0.5、专家签约、案例积累</div>
+<div class="ti">
+<div class="tim"><div class="tm">M4</div><div class="tt">案例营销与专家启动</div><div class="td">制作3个种子客户案例；筛选候选池签约1-2名专家；微信社群首次案例分享会。</div></div>
+<div class="tim"><div class="tm">M5</div><div class="tt">工具包V0.5发布</div><div class="td">工具包V0.5（3-4模板+课件初版+SOP V1.0）；签约到位2-3名专家；累计签约5客户。</div></div>
+<div class="tim"><div class="tm">M6</div><div class="tt">半年度回顾</div><div class="td">半年度战略复盘报告；基于H1数据校准H2目标；累计6-8个客户，ARR达30-40万。</div></div>
+</div></div>
+
+<div class="tp p3">
+<div class="pt">扩展期</div><div class="pr">M7-M9（2027年2月 - 4月） | 商协会合作、规模化交付、工具包V1.0</div>
+<div class="ti">
+<div class="tim"><div class="tm">M7</div><div class="tt">标准化提速</div><div class="td">全面推行标准化交付（60h/客户）；与1-2个商协会达成合作；签约第9-12个客户。</div></div>
+<div class="tim"><div class="tm">M8</div><div class="tt">专家协同交付试运行</div><div class="td">专家独立交付首训；工具包V1.0发布（8模板+完整课件+视频+SOP V2.0）；累计12-15客户。</div></div>
+<div class="tim"><div class="tm">M9</div><div class="tt">规模化冲刺</div><div class="td">月产能提升至3新客户；10+客户案例集完成；推进EasyClaw生态合作；累计16-18客户。</div></div>
+</div></div>
+
+<div class="tp p4">
+<div class="pt">优化期</div><div class="pr">M10-M12（2027年5月 - 7月） | 续约攻坚、模式验证、下年规划</div>
+<div class="ti">
+<div class="tim"><div class="tm">M10</div><div class="tt">续约准备与客户深耕</div><div class="td">为种子客户准备年度AI效率报告；引导增购（Agent数3到6个，加购2万/年）；评估招聘交付助理。</div></div>
+<div class="tim"><div class="tm">M11</div><div class="tt">续约攻坚</div><div class="td">完成所有到期客户续约（目标>=70%）；Exit Interview流失分析；签约最后一批客户（第19-22个）。</div></div>
+<div class="tim"><div class="tm">M12</div><div class="tt">年度收官与下年规划</div><div class="td">年度全面复盘；年度客户答谢活动；完成2027-2028年度战略规划；ARR突破100万。</div></div>
+</div></div>
+
+</div>
+
+<div class="card"><h3><span class="dot"></span>年度资源投入总览</h3>
+<div class="tw"><table>
+<thead><tr><th>资源类别</th><th>H1投入（M1-M6）</th><th>H2投入（M7-M12）</th><th>年度总计</th></tr></thead>
+<tbody>
+<tr><td>创始人时间</td><td>~960h</td><td>~960h</td><td><strong>~1,920h</strong></td></tr>
+<tr><td>专家分成费用</td><td>0</td><td>预计5-8万</td><td><strong>5-8万</strong></td></tr>
+<tr><td>市场推广费用</td><td>&lt;1万</td><td>&lt;2万</td><td><strong>3万</strong></td></tr>
+<tr><td>工具/软件费用</td><td>0.3万</td><td>0.6万</td><td><strong>0.9万</strong></td></tr>
+<tr style="font-weight:700"><td>总预算</td><td>~1.3万</td><td>~7.6-10.6万</td><td><strong>~8.9-11.9万</strong></td></tr>
+</tbody></table></div>
+</div>
+</div></section>
+
+<!-- SEC 7: 风险评估 -->
+<section class="sec" id="sec7"><div class="con">
+<div class="sh"><div class="sn2">Section 7</div><h2>风险评估</h2></div>
+<div class="tw"><table>
+<thead><tr><th>编号</th><th>风险描述</th><th>概率</th><th>影响</th><th>应对策略</th></tr></thead>
+<tbody>
+<tr><td><strong>R1</strong></td><td><strong>创始人产能崩盘</strong>：四线并行导致过劳，交付质量下降</td><td><span class="badge br">40%</span></td><td><span class="badge br">高</span></td><td>严格执行时间分配；M6后评估兼职助理；优先高客单价客户；建立客户筛选漏斗</td></tr>
+<tr><td><strong>R2</strong></td><td><strong>AI大厂免费冲击</strong>：阿里/字节免费Agent工具替代需求</td><td><span class="badge ba">30%</span></td><td><span class="badge br">高</span></td><td>强调行业Know-how定制；年度服务含持续迭代和人员培训；绑定EasyClaw生态</td></tr>
+<tr><td><strong>R3</strong></td><td><strong>客户续约率低</strong>：AI效果未达预期不续约</td><td><span class="badge ba">35%</span></td><td><span class="badge ba">中</span></td><td>每月发送AI效率报告；月活小于5次触发主动回访；合同写明效率目标</td></tr>
+<tr><td><strong>R4</strong></td><td><strong>专家合作失败</strong>：交付质量差、爽约、利益纠纷</td><td><span class="badge ba">30%</span></td><td><span class="badge ba">中</span></td><td>首单创始人陪同把关；协议明确退出条款；每专家最多3客户降低依赖</td></tr>
+<tr><td><strong>R5</strong></td><td><strong>竞争加剧</strong>：本地竞品进入内部效率赛道</td><td><span class="badge bb">25%</span></td><td><span class="badge ba">中</span></td><td>精细行业定位；5垂直行业做深建立案例壁垒；做最懂你行业</td></tr>
+<tr><td><strong>R6</strong></td><td><strong>技术迭代风险</strong>：EasyClaw更新或竞品工具超越</td><td><span class="badge bb">20%</span></td><td><span class="badge ba">中</span></td><td>每月追踪EasyClaw更新；模板保持模块化降低切换成本</td></tr>
+<tr><td><strong>R7</strong></td><td><strong>品牌转型困难</strong>：客户认知停留在软件定制公司</td><td><span class="badge ba">30%</span></td><td><span class="badge bb">低</span></td><td>通过免费诊断和公益沙龙建立新认知；种子成功案例作为品牌背书</td></tr>
+<tr><td><strong>R8</strong></td><td><strong>现金流问题</strong>：前期投入无收入，签约回款周期长</td><td><span class="badge bb">25%</span></td><td><span class="badge br">高</span></td><td>保持原有软件运维现金流；年度服务预付制（签50%+培训30%+上线20%）；首年预算&lt;12万</td></tr>
+</tbody></table></div>
+</div></section>
+
+<!-- SEC 8: 交叉验证 -->
+<section class="sec" id="sec8"><div class="con">
+<div class="sh"><div class="sn2">Section 8</div><h2>交叉验证记录</h2></div>
+<div class="tw"><table>
+<thead><tr><th>检查点</th><th>状态</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>OKR-BSC 对齐</td><td><span class="badge bgn">OK</span></td><td>O1 -&gt; 财务+客户，O2 -&gt; 内部流程+学习成长，O3 -&gt; 学习成长</td></tr>
+<tr><td>SWOT-OKR 一致性</td><td><span class="badge bgn">OK</span></td><td>O1回应存量优势+市场机会；O2回应产能瓶颈+标准化缺失；O3回应无专家资源</td></tr>
+<tr><td>TOWS-路线图关联</td><td><span class="badge bgn">OK</span></td><td>T1-&gt;M1-M3激活；T2-&gt;M7-M8商协会；T3-&gt;M3-M12模板建设；T4-&gt;M3-M5签约</td></tr>
+<tr><td>愿景-OKR 级联</td><td><span class="badge bgn">OK</span></td><td>愿景-&gt;O1验证模式-&gt;O2标准化-&gt;O3生态支撑</td></tr>
+<tr><td>负责人覆盖</td><td><span class="badge bgn">OK</span></td><td>全部由创始人兼任，标注时间分配和月度重心</td></tr>
+<tr><td>假设值风险审查</td><td><span class="badge ba">WARN</span></td><td>9个假设KR：客单价5万、20%转化率、40h交付工时均未实测。M3种子交付后回查校准</td></tr>
+</tbody></table></div>
+</div></section>
+
+<!-- SEC 9: 竞品速览 -->
+<section class="sec" id="sec9"><div class="con">
+<div class="sh"><div class="sn2">Section 9</div><h2>附录：竞品速览</h2></div>
+<div class="card"><h3><span class="dot"></span>东莞核心竞品格局</h3>
+<div class="tw"><table>
+<thead><tr><th>竞品</th><th>定位</th><th>核心模式</th><th>与科森斯差异</th><th>威胁</th></tr></thead>
+<tbody>
+<tr><td><strong>金管道AI</strong></td><td>AI营销获客+IP智能体</td><td>3天特训营+短视频矩阵</td><td>科森斯聚焦内部运营提效，金管道聚焦外部营销获客</td><td><span class="badge ba">3星</span></td></tr>
+<tr><td><strong>三鼎科技</strong></td><td>AI总裁全流程管理SaaS</td><td>虚拟员工+云商城</td><td>产品型vs服务型。科森斯重服务+EasyClaw生态</td><td><span class="badge ba">3星</span></td></tr>
+<tr><td><strong>阿里千问/字节豆包</strong></td><td>通用企业Agent平台</td><td>免费/低价标准化Agent</td><td>无行业定制、无人培训、无持续服务</td><td><span class="badge bb">2星</span></td></tr>
+<tr><td><strong>东莞智造AI实训中心</strong></td><td>工厂基础AI工具培训</td><td>低价团训、入门视频</td><td>无Agent能力。科森斯Agent搭建+年度服务是降维打击</td><td><span class="badge bb">1星</span></td></tr>
+<tr><td><strong>东莞职院/政府培训</strong></td><td>公益AI科普培训</td><td>送教上门、3个月100场</td><td>纯培训无Agent落地。科森斯可承接培训后企业，合作机会</td><td><span class="badge bgn">合作</span></td></tr>
+</tbody></table></div>
+</div>
+<div class="card"><h3><span class="dot"></span>关键市场数据</h3>
+<ul>
+<li>2026年全国企业AI培训市场规模<strong>320亿元</strong>，同比+67%（艾瑞咨询联合IDC）</li>
+<li><strong>70%</strong>中小企业面临想用人不会用、想落地落不了困境</li>
+<li><strong>82%</strong>企业将实战化课程列为首要选择，纯理论培训市场占比不足10%</li>
+<li>东莞AI人才缺口超<strong>3万</strong>，供需比1:9（大湾区产业研究院白皮书）</li>
+<li>AI企业培训客单价：基础套餐<strong>5-15万/年</strong>，定制陪跑20-50万/年</li>
+<li>100-500人中小企业AI培训需求增速<strong>72%</strong></li>
+<li>东莞政府人工智能+城市方案：到2028年规上企业AI普及率&gt;70%、AI企业&gt;=800家</li>
+</ul></div>
+</div></section>
+
+<!-- SEC 10: 下一步行动 -->
+<section class="sec" id="sec10"><div class="con">
+<div class="sh"><div class="sn2">Section 10</div><h2>下一步行动清单</h2></div>
+<div class="ag">
+<div class="ac2"><div class="pr2 p02">P0</div><div class="ab"><div class="at2">筛选存量客户TOP20并完成首批5家AI效率诊断</div><div class="am">截止：2026年8月底</div><div class="ad">至少3家出具诊断报告并表达兴趣</div></div></div>
+<div class="ac2"><div class="pr2 p02">P0</div><div class="ab"><div class="at2">准备种子客户合作方案（阶梯定价3/5/8万+服务清单）</div><div class="am">截止：2026年8月底</div><div class="ad">可立即发给客户的报价/方案文档</div></div></div>
+<div class="ac2"><div class="pr2 p12">P1</div><div class="ab"><div class="at2">签约1-2个种子客户并启动交付</div><div class="am">截止：2026年9月底</div><div class="ad">签约定金入账+首个Agent开发启动</div></div></div>
+<div class="ac2"><div class="pr2 p12">P1</div><div class="ab"><div class="at2">建立交付日志系统（过程记录+工时追踪）</div><div class="am">截止：2026年9月初</div><div class="ad">标准化记录模板就绪</div></div></div>
+<div class="ac2"><div class="pr2 p22">P2</div><div class="ab"><div class="at2">完成3个种子客户全流程交付</div><div class="am">截止：2026年10月底</div><div class="ad">3份客户成功案例+首版SOP</div></div></div>
+<div class="ac2"><div class="pr2 p22">P2</div><div class="ab"><div class="at2">签约首批专家（>=2名）</div><div class="am">截止：2026年11月底</div><div class="ad">签署分成合作协议</div></div></div>
+<div class="ac2"><div class="pr2 p22">P2</div><div class="ab"><div class="at2">标准化工具包V0.5</div><div class="am">截止：2026年12月底</div><div class="ad">3-4个Agent模板+课件初版+SOP</div></div></div>
+</div>
+<div class="card"><div class="co cg"><strong>报告完结</strong> — 本报告根据截至2026年8月3日的公开市场数据、行业报告和项目信息编制。所有标注假设值需在战略执行过程中通过实际客户验证和校准。建议每季度进行一次战略回顾（M3/M6/M9/M12）。</div></div>
+</div></section>
+
+</main>
+
+<footer class="footer">
+<p>科森斯 AI赋能战略报告 2026 &middot; 战略周期 2026.8 - 2027.7</p>
+<p>报告日期 2026-08-03 &middot; 编制：企业战略规划专家</p>
+<p style="margin-top:8px"><a href="https://github.com/zhangxu1992/kessons-ai-strategy-2026" target="_blank">GitHub</a></p>
+</footer>
+
+<button class="btt" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8593;</button>
+
+<script>
+// ===== Theme Toggle =====
+(function(){
+  var saved=localStorage.getItem('kessons-theme');
+  var theme=saved||'dark';
+  document.documentElement.setAttribute('data-theme',theme);
+  updateToggleIcon(theme);
+})();
+function toggleTheme(){
+  var html=document.documentElement;
+  var current=html.getAttribute('data-theme');
+  var next=current==='dark'?'light':'dark';
+  html.setAttribute('data-theme',next);
+  localStorage.setItem('kessons-theme',next);
+  updateToggleIcon(next);
+}
+function updateToggleIcon(theme){
+  var btn=document.getElementById('themeToggle');
+  if(btn){
+    btn.innerHTML=theme==='dark'?'🌙':'☀️';
+    btn.setAttribute('aria-label',theme==='dark'?'切换到浅色主题':'切换到深色主题');
+  }
+}
+// ===== Sidebar =====
+function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open')}
+document.querySelectorAll('.sn a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('sidebar').classList.remove('open')})})
+var secs=document.querySelectorAll('.sec,.hero'),navs=document.querySelectorAll('.sn a')
+function updateActive(){var sy=window.scrollY;secs.forEach(function(s,i){var t=s.offsetTop-100,b=t+s.offsetHeight;if(sy>=t&&sy<b){navs.forEach(function(n){n.classList.remove('ac')});if(navs[i])navs[i].classList.add('ac')}})}
+window.addEventListener('scroll',updateActive)
+var btt=document.getElementById('backToTop')
+window.addEventListener('scroll',function(){btt.classList.toggle('vis',window.scrollY>400)})
+document.addEventListener('click',function(e){var sb=document.getElementById('sidebar');if(sb.classList.contains('open')&&!sb.contains(e.target)&&!e.target.classList.contains('mt')){sb.classList.remove('open')}})
+</script>
+
+</body>
+</html>
